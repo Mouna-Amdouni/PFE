@@ -122,6 +122,11 @@ class User implements UserInterface
      */
     private $bio;
 
+    /**
+     * @ORM\Column(type="string", length=15)
+     */
+    private $cin;
+
 
 
     public function getId(): ?int
@@ -411,6 +416,18 @@ class User implements UserInterface
      public function setBio(?string $bio): self
      {
          $this->bio = $bio;
+
+         return $this;
+     }
+
+     public function getCin(): ?string
+     {
+         return $this->cin;
+     }
+
+     public function setCin(string $cin): self
+     {
+         $this->cin = $cin;
 
          return $this;
      }
